@@ -1,13 +1,13 @@
-# 📦 Návod: GitHub Desktop + Synergy Git (Gitea)
+# 📦 Návod: GitHub Desktop + Synergy Gitea
 
 Tímto systémem spravujeme soubory na serverech. Pracuješ u sebe v počítači, změny **pushneš**, a jakmile je majitel schválí, dostanou se na ostrý server.
 
 > **Důležité pojmy ve zkratce**
 > - **Repozitář (repo)** = složka projektu pod správou gitu (např. `cars`, `mlo`, `clothes`).
-> - **Větev `dev`** = pracovní verze. Sem pushuješ své změny, klidně kdykoliv.
-> - **Větev `main`** = ostrý/hlavní server. Přímo sem **nikdo pushovat nemůže** — změny tam jdou jen přes **Pull Request**, který musí schválit majitel.
-> - **Commit** = uložení balíčku změn s popiskem.
-> - **Push** = odeslání commitů na server (Gitea).
+> - **Větev `dev`** = Dev server. Tady děláš všechno, otestuješ to a dáš commit, až toho bude víc tak PR.
+> - **Větev `main`** = Main server. Přímo sem **nikdo pushovat nemůže** — změny tam jdou jen přes **Pull Request (PR)**, které musím schválit.
+> - **Commit** = Dáš po každé změně (př. upravíš lokace v configu, dáš commit -m "změna lokací"). Tohle se ukládá lokálně na PC.
+> - **Push** = Pošle lokální commity na server (dev).
 > - **Pull / Fetch** = stažení nejnovějších změn od ostatních.
 > - **Pull Request (PR)** = žádost „vezmi moje změny z `dev` do `main`".
 
@@ -27,11 +27,11 @@ GitHub Desktop tě hned nabízí přihlášení na GitHub.com. **To nepotřebuje
 
 1. Na úvodní obrazovce klikni dole na **Skip this step** (přeskočit přihlášení).
 2. Vyplň **jméno** a **email** (slouží jen jako podpis u commitů) → **Finish**.
-   - Klidně použij svoje běžné jméno a email.
+   - Použij login co dostaneš.
 
 ---
 
-## 3) Stažení (naklonování) repozitáře — tady se přihlásíš
+## 3) Stažení (naklonování) repozitáře do PC — tady se přihlásíš
 
 Každý má přístup jen ke svým repozitářům (auta / mapy / oblečení). Adresa repa je vždy:
 
@@ -90,8 +90,8 @@ Přímo do `main` nikdo nepushuje. Když chceš změny dostat na ostrý server:
    - **base** (kam) = `main`
    - **compare** (odkud) = `dev`
 4. Klikni **New Pull Request**, napiš krátce co měníš, a **Create**.
-5. **Majitel** to zkontroluje a buď schválí + sloučí (merge), nebo napíše připomínky.
-6. Po schválení jsou změny v `main`. (Na server se nahrají při naplánovaném restartu.)
+5. **Já (drilex)** to zkontroluju a buď schválím + sloučím (merge), nebo napíšu připomínky co změnit.
+6. Po schválení jsou změny v `main`. (Na server se nahrají po naplánovaném restartu.)
 
 ---
 
@@ -140,4 +140,4 @@ To je v pořádku — vidíš jen to, na co máš přístup (auta / mapy / oble�
 - Commit popisuj stručně a jasně (co se změnilo).
 - Velké soubory / hotové věci na ostrý server → jedině přes **Pull Request**.
 
-Adresa Gitey: **https://gitea.synergy-rp.eu** · Přístup ti zařídí majitel.
+Adresa Gitey: **https://gitea.synergy-rp.eu** · Přístup ti zařídím v DMs
